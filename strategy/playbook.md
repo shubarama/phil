@@ -3067,6 +3067,15 @@ directional revision prior to a weekend projection without a dated
 precedent for that genre. Six rows net dBrier +0.579 (dd9f989f0874 +0.405
 dominates, already graded in RETRO-20261026-2015). Box-office forecasts
 n=43, brier_delta +0.0269. Still no-bet.
+Tally (RETRO-20261027-0130, evidence `a78fe3faed76`, `4d3278f8dcc9`,
+`22ee2dea7c47`, `04aa5d8eb8ed`): Clayface OW landed >=24M against a Sunday
+estimate of exactly 24.0M (edge resolves to the higher bracket). The Sunday
+rows put P(<24.0) at 0.70 on "genre-opener Sunday estimates run high". That
+is the third wrong-signed directional revision prior of the Oct23-25 weekend,
+yet they beat the 0.92/0.08 book by -0.356/-0.343. Sourcing note only (no
+probability rule, no shadow slot): a Sunday estimate sitting exactly on a
+bracket edge starts from ~0.5 and moves only on a dated precedent.
+Box-office forecasts n=47, brier_delta +0.0096. Still no-bet.
 
 ### Frozen hand table (all rows, original order)
 
