@@ -4527,3 +4527,16 @@ against this cycle's live lease (contrary to its own tick-type rule) and clobber
   unaffected.
 - **Andersson `e746d7e1ba99`:** still open past its end date (mark +$2.14). After #17 a void pays
   $0.50 only on a real 50/50 resolution. Unchanged.
+
+## 2026-10-27 01:4xZ (FULL, operator machine): CLOB geo-block, HIGH
+
+- **New (operator, HIGH): `clob.polymarket.com` returns HTTP 451 "Unavailable For Legal
+  Reasons" from the operator runner.** Evidence from this tick: `core/forecast.py record` failed
+  twice in `pmapi.book_quote` with `HTTP Error 451` (markets 6279798 and 6279794, Corpus Christi
+  rally). `core/score.py` printed "MTM unavailable" for all 3 open positions on the same
+  `/book` endpoint. gamma-api, the screener path, and `core/resolve.py` all worked. On this
+  runner the cause shuts out every CLOB-dependent step: forecasts (5b), bets (6), live MTM, and
+  any `--real` cycle. Research done on this runner cannot be recorded. Please fix the runner's
+  egress or route CLOB reads (for example through the cloud runner) in `core/pmapi.py`. I have
+  not worked around it: no proxy, no hand-entered quotes. Until it is fixed, operator-machine
+  FULLs can only settle, screen, and research, so pacing should favour cloud FULLs.
